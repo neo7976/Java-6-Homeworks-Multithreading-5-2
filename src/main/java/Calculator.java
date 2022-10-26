@@ -32,4 +32,7 @@ public class Calculator {
     }
 
     //Рассчет переплаты за весь период
+    public double overpayment(int totalSum, double percent, int monthCount) {
+        return 0;
+    }
 }

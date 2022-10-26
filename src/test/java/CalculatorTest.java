@@ -31,10 +31,15 @@ class CalculatorTest {
     }
 
     @Test
-
     void sumPayment_test() {
         DecimalFormat df = new DecimalFormat("#.##");
         df.setRoundingMode(RoundingMode.FLOOR);
         Assertions.assertEquals("336877,85", df.format(cl.sumPayment(300_000, 0.15, 18)));
+    }
+    @Test
+    void overpayment_test() {
+        DecimalFormat df = new DecimalFormat("#.##");
+        df.setRoundingMode(RoundingMode.FLOOR);
+        Assertions.assertEquals("6877,85", df.format(cl.overpayment(300_000, 0.15, 18)));
     }
 }
