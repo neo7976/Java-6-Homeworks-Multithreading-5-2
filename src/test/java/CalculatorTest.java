@@ -3,6 +3,9 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.math.RoundingMode;
+import java.text.DecimalFormat;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class CalculatorTest {
@@ -22,7 +25,9 @@ class CalculatorTest {
 
     @Test
     void monthPayment() {
-        Assertions.assertEquals("18715,43", cl.monthPayment(300_000, 0.15, 18));
+        DecimalFormat df = new DecimalFormat("#.##");
+        df.setRoundingMode(RoundingMode.FLOOR);
+        Assertions.assertEquals("18715,43", df.format(cl.monthPayment(300_000, 0.15, 18)));
     }
 
     @Test

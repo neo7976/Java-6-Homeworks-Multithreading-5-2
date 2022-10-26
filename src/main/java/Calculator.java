@@ -20,13 +20,10 @@ public class Calculator {
      * МС – месячная ставка (поделить кредитную ставку на 12).
      */
 
-    public String monthPayment(int totalSum, double percent, int monthCount) {
-        DecimalFormat df = new DecimalFormat("#.##");
-        df.setRoundingMode(RoundingMode.FLOOR);
-
+    public double monthPayment(int totalSum, double percent, int monthCount) {
         double i = percent / 12;
         double k = (i * Math.pow(1 + i, monthCount)) / (Math.pow(1 + i, monthCount) - 1);
-        return df.format(totalSum * k);
+        return totalSum * k;
     }
 
     //Рассчет общей суммы к возврату в банк
