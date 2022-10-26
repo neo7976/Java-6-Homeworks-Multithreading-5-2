@@ -27,8 +27,8 @@ public class Calculator {
     }
 
     //Рассчет общей суммы к возврату в банк
-    public String sumPayment(int totalSum, double percent, int monthCount){
-        return null;
+    public double sumPayment(int totalSum, double percent, int monthCount){
+        return monthPayment(totalSum, percent, monthCount) * monthCount;
     }
 
     //Рассчет переплаты за весь период

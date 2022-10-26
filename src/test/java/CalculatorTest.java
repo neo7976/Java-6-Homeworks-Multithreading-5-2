@@ -31,7 +31,10 @@ class CalculatorTest {
     }
 
     @Test
+
     void sumPayment_test() {
-        Assertions.assertEquals("336877,74", cl.sumPayment(300_000, 0.15, 18));
+        DecimalFormat df = new DecimalFormat("#.##");
+        df.setRoundingMode(RoundingMode.FLOOR);
+        Assertions.assertEquals("336877,85", df.format(cl.sumPayment(300_000, 0.15, 18)));
     }
 }
