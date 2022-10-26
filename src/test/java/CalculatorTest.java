@@ -22,7 +22,6 @@ class CalculatorTest {
 
     @Test
     void monthPayment() {
-        int expected = 10;
-        Assertions.assertEquals(expected, cl.monthPayment());
+        Assertions.assertEquals("18715,43", cl.monthPayment(300_000, 0.15, 18));
     }
 }
