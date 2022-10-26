@@ -24,4 +24,9 @@ class CalculatorTest {
     void monthPayment() {
         Assertions.assertEquals("18715,43", cl.monthPayment(300_000, 0.15, 18));
     }
+
+    @Test
+    void sumPayment_test() {
+        Assertions.assertEquals("336877,74", cl.sumPayment(300_000, 0.15, 18));
+    }
 }

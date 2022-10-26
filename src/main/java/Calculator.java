@@ -28,4 +28,11 @@ public class Calculator {
         double k = (i * Math.pow(1 + i, monthCount)) / (Math.pow(1 + i, monthCount) - 1);
         return df.format(totalSum * k);
     }
+
+    //Рассчет общей суммы к возврату в банк
+    public String sumPayment(int totalSum, double percent, int monthCount){
+        return null;
+    }
+
+    //Рассчет переплаты за весь период
 }
