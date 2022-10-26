@@ -27,12 +27,12 @@ public class Calculator {
     }
 
     //Рассчет общей суммы к возврату в банк
-    public double sumPayment(int totalSum, double percent, int monthCount){
+    public double sumPayment(int totalSum, double percent, int monthCount) {
         return monthPayment(totalSum, percent, monthCount) * monthCount;
     }
 
     //Рассчет переплаты за весь период
     public double overpayment(int totalSum, double percent, int monthCount) {
-        return 0;
+        return sumPayment(totalSum, percent, monthCount)-totalSum;
     }
 }
