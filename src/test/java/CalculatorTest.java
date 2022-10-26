@@ -6,10 +6,9 @@ import org.junit.jupiter.api.Test;
 import java.math.RoundingMode;
 import java.text.DecimalFormat;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 class CalculatorTest {
     Calculator cl;
+    DecimalFormat df = new DecimalFormat("#.##");
 
     @BeforeEach
     void setUp() {
@@ -25,21 +24,18 @@ class CalculatorTest {
 
     @Test
     void monthPayment() {
-        DecimalFormat df = new DecimalFormat("#.##");
         df.setRoundingMode(RoundingMode.FLOOR);
         Assertions.assertEquals("18715,43", df.format(cl.monthPayment(300_000, 0.15, 18)));
     }
 
     @Test
     void sumPayment_test() {
-        DecimalFormat df = new DecimalFormat("#.##");
         df.setRoundingMode(RoundingMode.FLOOR);
         Assertions.assertEquals("336877,85", df.format(cl.sumPayment(300_000, 0.15, 18)));
     }
     @Test
     void overpayment_test() {
-        DecimalFormat df = new DecimalFormat("#.##");
         df.setRoundingMode(RoundingMode.FLOOR);
-        Assertions.assertEquals("6877,85", df.format(cl.overpayment(300_000, 0.15, 18)));
+        Assertions.assertEquals("36877,85", df.format(cl.overpayment(300_000, 0.15, 18)));
     }
 }
