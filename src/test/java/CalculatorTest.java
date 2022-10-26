@@ -22,7 +22,7 @@ class CalculatorTest {
 
     @Test
     void monthPayment() {
-
-        Assertions.assertEquals();
+        int expected = 10;
+        Assertions.assertEquals(expected, cl.monthPayment());
     }
 }
